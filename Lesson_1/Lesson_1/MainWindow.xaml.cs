@@ -1,7 +1,5 @@
 ﻿
-using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
@@ -15,12 +13,14 @@ namespace Lesson_1
     {
         private Thread _thread;
         private int _fibCount = 1;
-        private int _regulator = 1;
+        private int _regulator = 1000;
 
         private List<int> _numbs;
+
         private int _num;
-        
         private object _locker = new object();
+
+        #region props
 
         /// <summary> Регулятор кол-ва секунд. </summary>
         public int Regulator
@@ -32,7 +32,7 @@ namespace Lesson_1
         /// <summary> Число Фибоначчи. </summary>
         public int Numb { get; set; }
 
-        /// <summary> Порядковый номер числа Фибоначчи. </summary>
+        /// <summary> Кол-во выводимых чисел Фибоначчи. </summary>
         public int FibNumb
         {
             get => _fibCount;
@@ -45,11 +45,16 @@ namespace Lesson_1
             }
         }
 
+        #endregion
+
         public MainWindow()
         {
             InitializeComponent();
             DataContext = this;
+            _numbs = new FibonacciListClass().Numbs;
         }
+
+        #region methods
 
         /// <summary> Событие нажатия на кнопку. </summary>
         /// <param name="sender"></param>
@@ -61,23 +66,23 @@ namespace Lesson_1
             {
                 _numbs.Add(Fibonachi(i));
             }
-             
-            _thread = new Thread(() => 
-            {
-                foreach (var n in _numbs)
-                {
-                    Application.Current.Dispatcher.BeginInvoke(DispatcherPriority.Background, () =>
-                        {
-                            tb.Text = n.ToString();
-                            Thread.Sleep(_regulator);
 
-                            //Task 3
-                            //Thread.ResetAbort(); //System.PlatformNotSupportedException: "Thread abort is not supported on this platform."
-                        });
-                }
-            });
-            _thread.Start();
-            _thread.Join();
+            new Thread(() => Method()) { IsBackground = true }.Start();
+        }
+
+        private void Method()
+        {
+            foreach (var n in _numbs)
+            {
+                this.Dispatcher.BeginInvoke(() =>
+                {
+                    tb.Text = n.ToString();
+                    //Task 3
+                    //Thread.ResetAbort(); //System.PlatformNotSupportedException: "Thread abort is not supported on this platform."
+                    //_thread.Abort();    //System.PlatformNotSupportedException: "Thread abort is not supported on this platform."
+                });
+                Thread.Sleep(_regulator);
+            }
         }
 
         /// <summary> Вычислить число Фибоначчи по порядковому номеру. </summary>
@@ -85,12 +90,11 @@ namespace Lesson_1
         /// <returns> Число Фибоначчи. </returns>
         private int Fibonachi(int n)
         {
-            if (n == 0 || n == 1)
-            {
-                return n;
-            }
+            if (n == 0 || n == 1) { return n; }
 
             return Fibonachi(n - 1) + Fibonachi(n - 2);
         }
+
+        #endregion
     }
 }
