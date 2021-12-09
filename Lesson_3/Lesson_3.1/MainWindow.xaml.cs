@@ -19,12 +19,7 @@ namespace Lesson_3._1
 
         private void AddPerson_Click(object sender, RoutedEventArgs e)
         {
-            var personData = new List<string>();
-            personData.Add(pName.Text);
-            personData.Add(pSecName.Text);
-            personData.Add(pAge.Text);
-            personData.Add(pInsNumb.Text);
-            _viewModel.AddNewPersonCommand.Execute(personData);
+            _viewModel.AddNewPersonCommand.Execute(null);
         }
 
         private void DeletePerson_Click(object sender, RoutedEventArgs e)
@@ -34,7 +29,7 @@ namespace Lesson_3._1
 
         private void ClonePerson_Click(object sender, RoutedEventArgs e)
         {
-            _viewModel.DeletePersonCommand.Execute(null);
+            _viewModel.ClonePersonCommand.Execute(null);
         }
     }
 }

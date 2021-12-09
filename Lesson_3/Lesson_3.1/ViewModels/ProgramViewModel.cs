@@ -12,16 +12,18 @@ namespace Lesson_3._1.ViewModels
         private ObservableCollection<Person> _persons;
         private Person _selectPerson;
 
+        /// <summary> Список людей. </summary>
         public ObservableCollection<Person> PersonsList
         {
             get => _persons;
             set
             {
                 _persons = value;
-                OnPropertyChanged("Persons");
+                OnPropertyChanged("PersonsList");
             }
         }
 
+        /// <summary> Выбранный человк в списке. </summary>
         public Person SelectPerson
         {
             get => _selectPerson;
@@ -32,32 +34,56 @@ namespace Lesson_3._1.ViewModels
             }
         }
 
+        /// <summary> Команда. Добавить человека в список. </summary>
         public RelayCommand AddNewPersonCommand { get; private set; }
+        /// <summary> Команда. Удалить человека из списка. </summary>
         public RelayCommand DeletePersonCommand { get; private set; }
+        /// <summary> Команда. Клонировать данные. </summary>
         public RelayCommand ClonePersonCommand { get; private set; }
 
         public ProgramViewModel()
         {
             PersonsList = new ObservableCollection<Person>();
+
             AddNewPersonCommand = new RelayCommand(AddNewPerson_Command);
             DeletePersonCommand = new RelayCommand(DeletePerson_Command);
             ClonePersonCommand = new RelayCommand(ClonePerson_Command);
         }
 
+        /// <summary> Добавить человека в список. </summary>
+        /// <param name="param"></param>
         private void AddNewPerson_Command(object param)
         {
-            List<string> personData = (List<string>)param;
-            Person person = new Person(personData[0], personData[1], Int32.Parse(personData[2]), Double.Parse(personData[3]));
+            Person person = new Person();
             PersonsList.Add(person);
             SelectPerson = person;
         }
+
+        /// <summary> Удалть человека из списка. </summary>
+        /// <param name="param"></param>
         private void DeletePerson_Command(object param)
         {
             PersonsList.Remove(SelectPerson);
+
+            if (PersonsList.Count == 0) return;
+            SelectPerson = PersonsList[0];
         }
+
+        /// <summary> Клонировать данные человека. </summary>
+        /// <param name="param"></param>
         private void ClonePerson_Command(object param)
         {
+            Person clonePerson = new Person
+            {
+                Name = SelectPerson.Name,
+                SecondName = SelectPerson.SecondName,
+                Age = SelectPerson.Age,
+                //тут, благодаря паттерну прототип копируется вложенный класс
+                Address = SelectPerson.Address.DeepCopy()
+            };
 
+            PersonsList.Add(clonePerson);
+            SelectPerson = clonePerson;
         }
     }
 }
