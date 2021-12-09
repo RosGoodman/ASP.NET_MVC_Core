@@ -17,7 +17,10 @@ namespace Lesson_3._1
             InitializeComponent();
         }
 
-        private void AddPerson_Click(object sender, RoutedEventArgs e)
+        /// <summary> Добавить пустую строку для заполнения. </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void AddEmptyLine_Click(object sender, RoutedEventArgs e)
         {
             _viewModel.AddNewPersonCommand.Execute(null);
         }

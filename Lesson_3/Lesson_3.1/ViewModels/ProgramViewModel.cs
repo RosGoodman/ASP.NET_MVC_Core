@@ -1,8 +1,6 @@
 ﻿using Lesson_3._1.Command;
 using Lesson_3._1.Models;
 using Lesson_3.ViewModel;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace Lesson_3._1.ViewModels
@@ -34,7 +32,7 @@ namespace Lesson_3._1.ViewModels
             }
         }
 
-        /// <summary> Команда. Добавить человека в список. </summary>
+        /// <summary> Команда. Добавить в список пустой экзмепляр для заполнения. </summary>
         public RelayCommand AddNewPersonCommand { get; private set; }
         /// <summary> Команда. Удалить человека из списка. </summary>
         public RelayCommand DeletePersonCommand { get; private set; }

@@ -44,7 +44,7 @@
             </StackPanel>
         </StackPanel>
 
-        <Button Height="25" Width="70" Margin="15" Grid.Column="2" Click="AddPerson_Click">Добавить</Button>
+        <Button Height="25" Width="70" Margin="15" Grid.Column="2" Click="AddEmptyLine_Click">Добавить</Button>
 
         <DataGrid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="5" AutoGenerateColumns="false"
                  ItemsSource="{Binding PersonsList}"
