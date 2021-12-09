@@ -1,10 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using Lesson_3._1.ViewModels;
+using System.Collections.Generic;
 using System.Windows;
 
-namespace Lesson_3
+namespace Lesson_3._1
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
