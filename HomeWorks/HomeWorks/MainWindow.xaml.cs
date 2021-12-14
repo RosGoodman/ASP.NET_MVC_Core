@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using HomeWorks.Request;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace HomeWorks
 {
@@ -23,6 +12,8 @@ namespace HomeWorks
         public MainWindow()
         {
             InitializeComponent();
+            HttpRequest request = new HttpRequest();
+            request.RequestTo("https://yandex.ru/pogoda/month?lat=59.938951&lon=30.315635&via=hnav");
         }
     }
 }
