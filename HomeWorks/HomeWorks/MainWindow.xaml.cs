@@ -1,6 +1,6 @@
 ﻿
-using HomeWorks.Request;
 using System.Windows;
+using WeatherDataReceiver;
 
 namespace HomeWorks
 {
@@ -12,8 +12,8 @@ namespace HomeWorks
         public MainWindow()
         {
             InitializeComponent();
-            HttpRequest request = new HttpRequest();
-            request.RequestTo("https://yandex.ru/pogoda/month?lat=59.938951&lon=30.315635&via=hnav");
+            Receiver receiver = new Receiver();
+            receiver.RequestTo("https://yandex.ru/pogoda/month?lat=59.938951&lon=30.315635&via=hnav");
         }
     }
 }
