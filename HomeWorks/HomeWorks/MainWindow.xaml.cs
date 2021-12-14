@@ -1,6 +1,4 @@
-﻿
-using System.Windows;
-using WeatherDataReceiver;
+﻿using System.Windows;
 
 namespace HomeWorks
 {
@@ -9,11 +7,20 @@ namespace HomeWorks
     /// </summary>
     public partial class MainWindow : Window
     {
+        private WeatherViewModel _viewModel;
         public MainWindow()
         {
             InitializeComponent();
-            Receiver receiver = new Receiver();
-            receiver.RequestTo("https://yandex.ru/pogoda/month?lat=59.938951&lon=30.315635&via=hnav");
+            _viewModel = new WeatherViewModel();
+            DataContext = _viewModel;
+        }
+
+        /// <summary> Кнопка. Загрузить данные о погоде с Yandex. </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            _viewModel.LoadWeatherFromYandex();
         }
     }
 }
