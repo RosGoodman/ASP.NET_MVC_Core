@@ -2,8 +2,12 @@
 
 namespace PseudoScaner
 {
-    internal class Scan
+    /// <summary> Класс, описывающий эмуляцию сканирования файла. </summary>
+    internal class ScanFileEmulator
     {
+        /// <summary> Получить данные из файла. </summary>
+        /// <param name="path"> Путь к файлу. </param>
+        /// <returns> Данные из файла. </returns>
         internal string GetFakeDataFromFile(string path = "")
         {
                 var result = new char[10];

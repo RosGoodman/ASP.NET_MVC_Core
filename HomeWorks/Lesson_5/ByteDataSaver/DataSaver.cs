@@ -1,20 +1,19 @@
 ﻿namespace ByteDataSaver
 {
+    /// <summary> Сохранение данных в различные файлы. </summary>
     public struct DataSaver
     {
+        /// <summary> Сохранить данные в txt. </summary>
+        /// <param name="data"> Массив байт. </param>
         public void SaveByte(byte[] data)
         {
-            SaveToTxt(data);
-        }
+            BinaryWriter Writer = null;
+            string Name = "byteDataFromPseudoScaner.txt";
 
-        private void SaveToTxt(byte[] data)
-        {
-            string str = string.Empty;
-            for (int i = 0; i < 50; i++)
-            {
-                str += data[i];
-            }
-            Console.WriteLine(str);
+            using StreamWriter fstream = new StreamWriter(Name, true, System.Text.Encoding.Default);
+
+            // запись массива байтов в файл
+            fstream.WriteLine(BitConverter.ToString(data));
         }
     }
 }

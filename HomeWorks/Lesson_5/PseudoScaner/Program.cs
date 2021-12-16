@@ -1,6 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿
 using PseudoScaner.ScanerJobs;
-using Microsoft.Extensions.Hosting;
 using Quartz;
 using Quartz.Impl;
 
