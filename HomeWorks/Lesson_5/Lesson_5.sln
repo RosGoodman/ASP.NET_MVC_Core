@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PseudoScaner", "PseudoScaner\PseudoScaner.csproj", "{8BEB1055-8C85-4BBD-B699-A57182C70C24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ByteDataSaver", "ByteDataSaver\ByteDataSaver.csproj", "{D69612C7-9DD4-4F6B-844B-071F3B5750F8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BEB1055-8C85-4BBD-B699-A57182C70C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEB1055-8C85-4BBD-B699-A57182C70C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEB1055-8C85-4BBD-B699-A57182C70C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEB1055-8C85-4BBD-B699-A57182C70C24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D69612C7-9DD4-4F6B-844B-071F3B5750F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D69612C7-9DD4-4F6B-844B-071F3B5750F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D69612C7-9DD4-4F6B-844B-071F3B5750F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D69612C7-9DD4-4F6B-844B-071F3B5750F8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0C229090-6E6A-4B5C-A196-F4B84C3AEDBF}
+	EndGlobalSection
+EndGlobal
