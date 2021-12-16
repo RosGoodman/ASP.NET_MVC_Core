@@ -9,7 +9,12 @@
 
         private void SaveToTxt(byte[] data)
         {
-
+            string str = string.Empty;
+            for (int i = 0; i < 50; i++)
+            {
+                str += data[i];
+            }
+            Console.WriteLine(str);
         }
     }
 }

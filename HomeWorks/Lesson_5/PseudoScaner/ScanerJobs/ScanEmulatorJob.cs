@@ -16,12 +16,12 @@ namespace PseudoScaner.ScanerJobs
         public ScanEmulatorJob()
         {
             _scan = new Scan();
-            _cpuCounter = new PerformanceCounter("Processon", "% Processor Time", "_Total");
-            _ramCounter = new PerformanceCounter("Memory", "Avalible MBytes");
+            _cpuCounter = new PerformanceCounter("Processor", "% Processor Time", "_Total");
+            _ramCounter = new PerformanceCounter("Memory", "Available MBytes");
             _dataSaver = new DataSaver();
         }
 
-        public Task Execute(IJobExecutionContext context)
+        public async Task Execute(IJobExecutionContext context)
         {
             //получение значения занятости процессора
             int cpuUsageInPercent = Convert.ToInt32(_cpuCounter.NextValue());
@@ -33,11 +33,11 @@ namespace PseudoScaner.ScanerJobs
             DateTimeOffset time = DateTimeOffset.UtcNow;
 
             //получение данных файла
-            string fileData = _scan.GetDataFromFile("path");    //ToDo: past file path
+            string fileData = _scan.GetFakeDataFromFile("fakePath");
 
+            //библиотека, записыавающая данные
             _dataSaver.SaveByte(new DataConverter().ConvertToByte(time, cpuUsageInPercent, avalibleMBytes, fileData));
 
-            return Task.CompletedTask;
         }
     }
 }

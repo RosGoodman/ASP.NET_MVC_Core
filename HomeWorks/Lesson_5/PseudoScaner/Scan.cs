@@ -4,9 +4,9 @@ namespace PseudoScaner
 {
     internal class Scan
     {
-        internal string GetDataFromFile(string path = "")
+        internal string GetFakeDataFromFile(string path = "")
         {
-                var result = new char[length];
+                var result = new char[10];
                 var r = new Random();
                 for (int i = 0; i < result.Length; i++)
                 {
@@ -14,6 +14,7 @@ namespace PseudoScaner
                         result[i] = (char)r.Next(127);
                     while (result[i] < '!');
                 }
+
                 return new string(result);
         }
     }
