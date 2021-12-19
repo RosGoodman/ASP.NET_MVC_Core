@@ -1,5 +1,4 @@
-﻿
-namespace Lesson_5;
+﻿namespace Lesson_6;
 
 public static class Program
 {
