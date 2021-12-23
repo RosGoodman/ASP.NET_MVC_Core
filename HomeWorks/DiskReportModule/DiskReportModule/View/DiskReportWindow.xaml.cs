@@ -9,10 +9,12 @@ namespace DiskReportModule.View
     /// </summary>
     public partial class DiskReportWindow : Window
     {
-        public DiskReportWindow()
+        //предполагается заппуск модуля из основной программы с указанием имени диска
+
+        public DiskReportWindow(string diskName)
         {
             InitializeComponent();
-            DataContext = new ReportWindowViewModel();
+            DataContext = new ReportWindowViewModel(diskName);
         }
     }
 }

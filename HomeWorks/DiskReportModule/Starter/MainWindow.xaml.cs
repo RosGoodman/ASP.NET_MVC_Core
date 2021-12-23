@@ -12,7 +12,7 @@ namespace Starter
         public MainWindow()
         {
             InitializeComponent();
-            DiskReportWindow reportWindow = new DiskReportWindow();
+            DiskReportWindow reportWindow = new DiskReportWindow("C:\\");
             reportWindow.Show();
         }
     }

@@ -5,8 +5,6 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DiskReportModule", "DiskReportModule\DiskReportModule.csproj", "{34A9F4F3-4ABF-448F-BBA9-B389C021991E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Starter", "Starter\Starter.csproj", "{02CDC597-EDD6-4438-8A45-59757594840C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,10 +15,6 @@ Global
 		{34A9F4F3-4ABF-448F-BBA9-B389C021991E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{34A9F4F3-4ABF-448F-BBA9-B389C021991E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{34A9F4F3-4ABF-448F-BBA9-B389C021991E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{02CDC597-EDD6-4438-8A45-59757594840C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{02CDC597-EDD6-4438-8A45-59757594840C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{02CDC597-EDD6-4438-8A45-59757594840C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{02CDC597-EDD6-4438-8A45-59757594840C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
