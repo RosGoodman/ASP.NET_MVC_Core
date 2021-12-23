@@ -8,7 +8,6 @@ namespace DiskReportModule.ViewModel;
 public class ReportWindowViewModel
 {
     public string DiskName { get; private set; }
-    public string DiskType { get; private set; } = "Локальный диск";
     public string FileSystem { get; private set; }
     public string OccupedSpaceByte { get; private set; }
     public string OccupedSpaceGB { get; private set; }

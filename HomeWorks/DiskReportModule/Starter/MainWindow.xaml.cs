@@ -1,6 +1,5 @@
 ﻿
 using System.Windows;
-using DiskReportModule.View;
 
 namespace Starter
 {
@@ -12,8 +11,7 @@ namespace Starter
         public MainWindow()
         {
             InitializeComponent();
-            DiskReportWindow reportWindow = new DiskReportWindow("C:\\");
-            reportWindow.Show();
+            DiskReportModule.View.DiskReportWindow reportWindow = new DiskReportModule.View.DiskReportWindow("C:\\");
         }
     }
 }
