@@ -1,0 +1,81 @@
+﻿<div class="global-content">
+        
+    <div class="container">
+
+        <div class="breadcrumb-container multi-crumbs">
+   
+            <ul class="breadcrumb">
+                <li>
+                    <a @*href="/ru"*@>
+                        <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" @*xmlns="http://www.w3.org/2000/svg"*@>
+                            <polygon points="16.3515625 11.1015625 16.3515625 12.25 9.2421875 12.25 12.4960938 15.53125 11.6757812 16.3515625 7 11.6757812 11.6757812 7 12.4960938 7.8203125 9.2421875 11.1015625"></polygon>
+                        </svg>
+                    На главную страницу справки
+                    </a>
+                </li>
+
+            </ul>
+                
+            <div class="breadcrumb text-right">
+                <button class="btn btn-med btn-lightgrey open-print-dialog" alt="Печать">
+                    <svg width="24px" height="24px" viewBox="0 0 24 24" version="1.1" @*xmlns="http://www.w3.org/2000/svg"*@>
+                        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <path d="M19,8 L5,8 C3.34,8 2,9.34 2,11 L2,17 L6,17 L6,21 L18,21 L18,17 L22,17 L22,11 C22,9.34 20.66,8 19,8 Z M16,19 L8,19 L8,14 L16,14 L16,19 Z M19,12 C18.45,12 18,11.55 18,11 C18,10.45 18.45,10 19,10 C19.55,10 20,10.45 20,11 C20,11.55 19.55,12 19,12 Z M18,3 L6,3 L6,7 L18,7 L18,3 Z" id="Shape" fill="#221f1f" fill-rule="nonzero"></path>
+                        </g>
+                    </svg>
+                    <span class="hidden-mobile">Печать</span>
+                </button>
+            </div>
+        </div>
+              
+    <h1 class="kb-title">Корпоративная информация</h1>
+     
+        <div class="pane-wrapper">
+
+            <div class="left-pane">
+                    
+                <section dir="LTR" class="kb-article kb-article-variant gradient" data-countries=",RU,">
+                    <div class="page-block">
+                        <div class="c-wrapper">
+                            <div>
+                                <h2>@ViewData["Contacts"]</h2>
+                                @{
+                                    foreach(var contact in ViewData["Contacts"])
+                                    {
+                                        <h2>
+                                            @contact.Name;
+                                        </h2>
+                                    }
+                                }
+                                <p>Netflix предоставляет услуги пользователям из множества разных стран. Юридическое лицо, которое предоставляет Вам доступ к сервису Netflix и выступает оператором Ваших данных, зависит от страны, в которой оформлена подписка, и будет указано в электронном сообщении с подтверждением подписки или оплаты.</p>
+                                <p><strong>ООО «Развлекательный онлайн-сервис»</strong><br>Пречистенская набережная, дом 13,<br>строение 1, этаж 3, офис 23<br>Москва, Россия<br>ОГРН: 1207700255597<br>Идентификационный номер налогоплательщика (ИНН): 9704024068</p>
+                                <p><strong>Netflix International B.V.</strong><br>Karperstraat 8-10<br>1075 KZ Amsterdam, the Netherlands<br>KvK: 62266519<br>НДС: NL853746333B01<br>Уставный капитал: 12&nbsp;500&nbsp;евро</p>
+                                <p><strong>Netflix, Inc.</strong><br>100 Winchester Circle<br>Los Gatos, CA 95032, USA</p>
+                                <p><strong>Netflix Entretenimento Brasil, Ltda.</strong><br>Alameda Xingu, 350 - 14º andar - Alphaville Industrial<br>Barueri, CEP 06455-911 - SP - Brazil<br>CNPJ: 13.590.585/0002-70</p>
+                                <p><strong>Netflix Entertainment Services India LLP</strong><br>Level 11, Godrej BKC, Plot C-68<br>G Block, BKC- Bandra (East)<br>Mumbai 400051, India</p>
+                                <p><strong>Netflix G.K.</strong><br>Tokyo Midtown East 3F<br>9-7-2 Akasaka<br>Minato-ku<br>Tokyo 107-0052 Japan</p>
+                                <p><strong>Netflix Services Korea Ltd.</strong><br>20F, Tower A, Centropolis Building<br>26, Ujeongguk-ro, Jongno-gu, Seoul, 03161, Republic of Korea</p>
+                                <p><strong>Netflix Services UK Limited</strong>&nbsp;<br>100 New Bridge Street, London, EC4V 6JA<br>Номер компании (регистрационный):&nbsp; 9091899<br>Регистрационный номер плательщика налога на прибыль:&nbsp; 623 25810 01805 A</p>
+                                <p><strong>Netflix Pte. Ltd.</strong><br>9 Straits View, Marina One West Tower #14-07/12, Singapore 018937<br>Регистрационный идентификационный номер 201531197W</p>
+                                <p><strong>Netflix Services France S.A.S.&nbsp;&nbsp;</strong><br>11 Place Édouard VII, 75009 Paris, France&nbsp;<br>Учетный номер компании: 843 655 549 RCS Paris&nbsp;</p>
+                                <p><strong>Netflix Servicios de Transmisión España, S.L.</strong><br>Paseo de la Castellana 89,&nbsp; 28046 Madrid, Spain<br>Номер плательщика НДС / NIF&nbsp; B88182514</p>
+                                <p><strong>Netflix México S. de R.L. de C.V.&nbsp;</strong><br>Prado Sur 150, Floor 4. Lomas de Chapultepec, ZC: 11000. CDMX<br>Регистрационный номер: 112483<br>RFC (налоговый идентификатор): NME110513P13</p>
+                                <p><br></p>
+                                <p></p>
+                            </div>
+                        </div>
+                    </div>
+                           
+                </section>
+                      
+            </div>
+
+            <div class="right-pane">
+                <div class="wrapper page-block">
+                </div>
+            </div>
+
+        </div>
+    </div>
+        
+</div>

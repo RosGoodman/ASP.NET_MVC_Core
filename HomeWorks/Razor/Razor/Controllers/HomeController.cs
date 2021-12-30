@@ -15,6 +15,8 @@ namespace Razor.Controllers
 
         public IActionResult Index()
         {
+            var contacts = new ContactsViewModel();
+            ViewData["Contacts"] = contacts.Contacts;
             return View();
         }
 
