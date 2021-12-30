@@ -1,4 +1,4 @@
-namespace RazorPages.Models
+namespace Razor.Models
 {
     public class ErrorViewModel
     {
