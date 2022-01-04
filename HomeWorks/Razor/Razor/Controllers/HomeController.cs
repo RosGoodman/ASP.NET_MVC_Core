@@ -16,8 +16,8 @@ namespace Razor.Controllers
         public IActionResult Index()
         {
             var contacts = new ContactsViewModel();
-            ViewData["Contacts"] = contacts.Contacts;
-            return View();
+            //ViewBag.ContactsList = contacts.ContactsList;
+            return View(contacts);
         }
 
         public IActionResult Privacy()
