@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Common.Entityes;
+using Microsoft.AspNetCore.Mvc;
 using Razor.Models;
 using System.Diagnostics;
 
@@ -8,16 +9,21 @@ namespace Razor.Controllers
     {
         private readonly ILogger<HomeController> _logger;
 
+        private List<Contact> _contacts;
+
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
+
+            var contactData = new ContactData();
+            _contacts = contactData.Contacts;
         }
 
         public IActionResult Index()
         {
-            var contacts = new ContactsViewModel();
-            //ViewBag.ContactsList = contacts.ContactsList;
-            return View(contacts);
+            ContactsViewModel ivm = new ContactsViewModel { Contacts = _contacts };
+
+            return View(ivm);
         }
 
         public IActionResult Privacy()

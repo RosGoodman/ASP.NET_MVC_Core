@@ -38,15 +38,30 @@
                     <div class="page-block">
                         <div class="c-wrapper">
                             <div>
-                                @{
-                                    foreach(var c in Model)
-                                    {
-                                        Contact contact = (Contact)c;
-                                    }
-                                    var y = 0;
-                                    <h2>kkk</h2>
-                                }
                                 <p>Netflix предоставляет услуги пользователям из множества разных стран. Юридическое лицо, которое предоставляет Вам доступ к сервису Netflix и выступает оператором Ваших данных, зависит от страны, в которой оформлена подписка, и будет указано в электронном сообщении с подтверждением подписки или оплаты.</p>
+                                @using Common.Entityes;
+                                @{
+                                    foreach(Contact contact in Model.Contacts)
+                                    {
+                                        <p><strong>@contact.Name</strong>
+                                        @foreach(string addr in contact.Address)
+                                        {
+                                            if(addr != "")
+                                            {
+                                                <br>@addr;
+                                            }
+                                        }
+                                        @foreach(string legData in contact.LegalData)
+                                        {
+                                            if(legData != "")
+                                            {
+                                                <br>@legData;
+                                            }
+                                        }
+                                        </p>
+                                    }
+                                }
+                                @*<p>Netflix предоставляет услуги пользователям из множества разных стран. Юридическое лицо, которое предоставляет Вам доступ к сервису Netflix и выступает оператором Ваших данных, зависит от страны, в которой оформлена подписка, и будет указано в электронном сообщении с подтверждением подписки или оплаты.</p>
                                 <p><strong>ООО «Развлекательный онлайн-сервис»</strong><br>Пречистенская набережная, дом 13,<br>строение 1, этаж 3, офис 23<br>Москва, Россия<br>ОГРН: 1207700255597<br>Идентификационный номер налогоплательщика (ИНН): 9704024068</p>
                                 <p><strong>Netflix International B.V.</strong><br>Karperstraat 8-10<br>1075 KZ Amsterdam, the Netherlands<br>KvK: 62266519<br>НДС: NL853746333B01<br>Уставный капитал: 12&nbsp;500&nbsp;евро</p>
                                 <p><strong>Netflix, Inc.</strong><br>100 Winchester Circle<br>Los Gatos, CA 95032, USA</p>
@@ -59,7 +74,7 @@
                                 <p><strong>Netflix Services France S.A.S.&nbsp;&nbsp;</strong><br>11 Place Édouard VII, 75009 Paris, France&nbsp;<br>Учетный номер компании: 843 655 549 RCS Paris&nbsp;</p>
                                 <p><strong>Netflix Servicios de Transmisión España, S.L.</strong><br>Paseo de la Castellana 89,&nbsp; 28046 Madrid, Spain<br>Номер плательщика НДС / NIF&nbsp; B88182514</p>
                                 <p><strong>Netflix México S. de R.L. de C.V.&nbsp;</strong><br>Prado Sur 150, Floor 4. Lomas de Chapultepec, ZC: 11000. CDMX<br>Регистрационный номер: 112483<br>RFC (налоговый идентификатор): NME110513P13</p>
-                                <p><br></p>
+                                <p><br></p>*@
                                 <p></p>
                             </div>
                         </div>
